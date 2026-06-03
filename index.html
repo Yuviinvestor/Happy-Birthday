@@ -11,6 +11,11 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #ffd6e8 0%, #fff5fb 50%, #e0f7ff 100%);
@@ -18,17 +23,21 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
+            overflow-x: hidden;
             position: relative;
+            padding: 20px;
+            width: 100%;
         }
 
         /* Floating clouds */
         .cloud {
-            position: absolute;
+            position: fixed;
             background: white;
             border-radius: 100px;
             opacity: 0.8;
             animation: float 15s infinite ease-in-out;
+            z-index: 1;
+            pointer-events: none;
         }
 
         .cloud::before,
@@ -72,7 +81,7 @@
         .cloud3 {
             width: 120px;
             height: 45px;
-            top: 70%;
+            bottom: 10%;
             left: -120px;
             animation-delay: 10s;
         }
@@ -84,11 +93,13 @@
 
         /* Floating balloons */
         .balloon {
-            position: absolute;
+            position: fixed;
             width: 40px;
             height: 50px;
             border-radius: 50% 50% 50% 0;
-            animation: rise 6s ease-in infinite;
+            animation: rise 8s ease-in infinite;
+            z-index: 1;
+            pointer-events: none;
         }
 
         .balloon::before {
@@ -142,11 +153,13 @@
 
         /* Confetti */
         .confetti {
-            position: absolute;
+            position: fixed;
             width: 10px;
             height: 10px;
             background: #ffb3d9;
             animation: confetti-fall 3s ease-in forwards;
+            z-index: 5;
+            pointer-events: none;
         }
 
         @keyframes confetti-fall {
@@ -165,18 +178,21 @@
             text-align: center;
             z-index: 10;
             background: rgba(255, 255, 255, 0.95);
-            padding: 60px 40px;
+            padding: 50px 30px;
             border-radius: 30px;
             box-shadow: 0 20px 60px rgba(255, 182, 217, 0.3);
             max-width: 600px;
+            width: 100%;
             backdrop-filter: blur(10px);
             border: 2px solid rgba(255, 182, 217, 0.5);
+            margin: auto;
         }
 
         .emoji-balloon {
             font-size: 80px;
             margin-bottom: 20px;
             animation: bounce 2s ease-in-out infinite;
+            display: inline-block;
         }
 
         @keyframes bounce {
@@ -211,6 +227,7 @@
             color: #ff1493;
             font-size: 24px;
             animation: heartbeat 1.5s ease-in-out infinite;
+            display: inline-block;
         }
 
         @keyframes heartbeat {
@@ -227,6 +244,7 @@
             font-size: 16px;
             color: #555;
             line-height: 1.8;
+            word-wrap: break-word;
         }
 
         .wish-list {
@@ -245,6 +263,7 @@
             color: #ff1493;
             font-weight: bold;
             border: 2px solid #ffb3d9;
+            white-space: nowrap;
         }
 
         .button {
@@ -259,6 +278,7 @@
             transition: all 0.3s ease;
             box-shadow: 0 10px 30px rgba(255, 20, 147, 0.3);
             font-weight: bold;
+            z-index: 11;
         }
 
         .button:hover {
@@ -275,6 +295,7 @@
             margin: 20px 0;
             letter-spacing: 15px;
             animation: twinkle 1.5s ease-in-out infinite;
+            display: block;
         }
 
         @keyframes twinkle {
@@ -290,8 +311,8 @@
 
         @media (max-width: 600px) {
             .container {
-                padding: 40px 20px;
-                max-width: 90%;
+                padding: 30px 20px;
+                max-width: 95%;
             }
 
             h1 {
@@ -304,6 +325,20 @@
 
             .message {
                 font-size: 16px;
+            }
+
+            .emoji-balloon {
+                font-size: 60px;
+            }
+
+            .stars {
+                letter-spacing: 10px;
+                font-size: 24px;
+            }
+
+            .wish-item {
+                font-size: 12px;
+                padding: 12px 15px;
             }
         }
     </style>
@@ -328,7 +363,7 @@
         
         <div class="name">Rudranshi</div>
         
-        <div class="stars">✨ 🎂 ✨</div>
+        <span class="stars">✨ 🎂 ✨</span>
 
         <div class="message">
             "Jo sapne dekhe ho unhe poora karne mein tumhare saath hoon main.
@@ -347,6 +382,8 @@
             Tum apne sapne dekh rahi ho aur usi ke liye khud ko dedicate kar rahi ho - ye mujhe inspire karta hai.
             <br><br>
             Tum ek amazing human ho aur teri journey ko dekh kar mujhe fakhaar hota hai.
+            <br><br>
+            Tum kabhi akele nahi ho, maine hamesha samjha aur samhlunga.
             <br><br>
             <strong>Happy Birthday! 🎉</strong>
         </div>
