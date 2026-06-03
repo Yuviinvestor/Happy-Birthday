@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Rudranshi 🎉</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffd6e8 0%, #fff5fb 50%, #e0f7ff 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Floating clouds */
+        .cloud {
+            position: absolute;
+            background: white;
+            border-radius: 100px;
+            opacity: 0.8;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .cloud::before,
+        .cloud::after {
+            content: '';
+            position: absolute;
+            background: white;
+            border-radius: 100px;
+        }
+
+        .cloud::before {
+            width: 50px;
+            height: 50px;
+            top: -25px;
+            left: 10px;
+        }
+
+        .cloud::after {
+            width: 40px;
+            height: 40px;
+            top: -15px;
+            right: 10px;
+        }
+
+        .cloud1 {
+            width: 100px;
+            height: 40px;
+            top: 10%;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .cloud2 {
+            width: 80px;
+            height: 35px;
+            top: 25%;
+            right: -80px;
+            animation-delay: 5s;
+        }
+
+        .cloud3 {
+            width: 120px;
+            height: 45px;
+            top: 70%;
+            left: -120px;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(100vw); }
+        }
+
+        /* Floating balloons */
+        .balloon {
+            position: absolute;
+            width: 40px;
+            height: 50px;
+            border-radius: 50% 50% 50% 0;
+            animation: rise 6s ease-in infinite;
+        }
+
+        .balloon::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 60px;
+            background: #999;
+            left: 19px;
+            top: 100%;
+        }
+
+        .balloon1 {
+            background: linear-gradient(135deg, #ffb3d9, #ff99cc);
+            left: 10%;
+            bottom: -50px;
+            animation-delay: 0s;
+        }
+
+        .balloon2 {
+            background: linear-gradient(135deg, #ffc0e0, #ffb3d9);
+            left: 20%;
+            bottom: -50px;
+            animation-delay: 1s;
+        }
+
+        .balloon3 {
+            background: linear-gradient(135deg, #ff99cc, #ff80bf);
+            left: 70%;
+            bottom: -50px;
+            animation-delay: 0.5s;
+        }
+
+        .balloon4 {
+            background: linear-gradient(135deg, #ffb3d9, #ffc0e0);
+            left: 85%;
+            bottom: -50px;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes rise {
+            0% { 
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% { 
+                transform: translateY(-100vh) rotate(20deg);
+                opacity: 0;
+            }
+        }
+
+        /* Confetti */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ffb3d9;
+            animation: confetti-fall 3s ease-in forwards;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Main content */
+        .container {
+            text-align: center;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 60px 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(255, 182, 217, 0.3);
+            max-width: 600px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 182, 217, 0.5);
+        }
+
+        .emoji-balloon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        h1 {
+            color: #ff66b2;
+            font-size: 48px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(255, 182, 217, 0.3);
+        }
+
+        .name {
+            color: #ff1493;
+            font-size: 56px;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 3px 3px 6px rgba(255, 105, 180, 0.2);
+        }
+
+        .message {
+            color: #666;
+            font-size: 18px;
+            line-height: 1.8;
+            margin: 30px 0;
+            font-style: italic;
+        }
+
+        .heart {
+            color: #ff1493;
+            font-size: 24px;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .special-message {
+            background: linear-gradient(135deg, #ffd6e8, #fff0f8);
+            padding: 25px;
+            border-radius: 20px;
+            margin: 30px 0;
+            border-left: 5px solid #ff1493;
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .wish-list {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .wish-item {
+            background: rgba(255, 182, 217, 0.3);
+            padding: 15px 20px;
+            border-radius: 15px;
+            font-size: 14px;
+            color: #ff1493;
+            font-weight: bold;
+            border: 2px solid #ffb3d9;
+        }
+
+        .button {
+            background: linear-gradient(135deg, #ff66b2, #ff1493);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.3);
+            font-weight: bold;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.4);
+        }
+
+        .button:active {
+            transform: translateY(-1px);
+        }
+
+        .stars {
+            font-size: 30px;
+            margin: 20px 0;
+            letter-spacing: 15px;
+            animation: twinkle 1.5s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #999;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 20px;
+                max-width: 90%;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .name {
+                font-size: 44px;
+            }
+
+            .message {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Clouds -->
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+
+    <!-- Balloons -->
+    <div class="balloon balloon1"></div>
+    <div class="balloon balloon2"></div>
+    <div class="balloon balloon3"></div>
+    <div class="balloon balloon4"></div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="emoji-balloon">🎈</div>
+        
+        <h1>Happy Birthday!</h1>
+        
+        <div class="name">Rudranshi</div>
+        
+        <div class="stars">✨ 🎂 ✨</div>
+
+        <div class="message">
+            "Jo sapne dekhe ho unhe poora karne mein tumhare saath hoon main.
+            <br><br>
+            Milne ka wait kar raha hoon tum se, lekin jab tak nahi milaata, 
+            <br>
+            Ye website tum se batati hai kitni special ho tum meri liye.
+            <br><br>
+            <span class="heart">❤️</span>"
+        </div>
+
+        <div class="special-message">
+            <strong>Dear Rudranshi,</strong>
+            <br><br>
+            Tum kitni bhi dur ho, dil mein palak jhapakna band nahi karta. 
+            Tum apne sapne dekh rahi ho aur usi ke liye khud ko dedicate kar rahi ho - ye mujhe inspire karta hai.
+            <br><br>
+            Tum ek amazing human ho aur teri journey ko dekh kar mujhe fakhaar hota hai.
+            <br><br>
+            <strong>Happy Birthday! 🎉</strong>
+        </div>
+
+        <div class="wish-list">
+            <div class="wish-item">🎂 Cake Day</div>
+            <div class="wish-item">🌟 Success</div>
+            <div class="wish-item">💫 Dreams</div>
+            <div class="wish-item">😊 Happiness</div>
+        </div>
+
+        <button class="button" onclick="createConfetti()">🎉 Celebrate Now!</button>
+
+        <div class="footer">
+            Made with ❤️ for someone special
+        </div>
+    </div>
+
+    <script>
+        function createConfetti() {
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = '0px';
+                confetti.style.background = ['#ffb3d9', '#ff99cc', '#ff80bf', '#ffc0e0'][Math.floor(Math.random() * 4)];
+                confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => confetti.remove(), 3000);
+            }
+        }
+
+        window.addEventListener('load', () => {
+            setTimeout(() => createConfetti(), 500);
+        });
+    </script>
+</body>
+</html>
